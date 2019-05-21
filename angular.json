@@ -23,7 +23,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "./node_modules/bootstrap/dist/css/bootstrap.css"
             ],
             "scripts": [],
             "es5BrowserSupport": true
@@ -124,6 +125,41 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "uiTestAlex": {
+      "root": "projects/ui-test-alex",
+      "sourceRoot": "projects/ui-test-alex/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ui-test/tsconfig.lib.json",
+            "project": "projects/ui-test/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ui-test/src/test.ts",
+            "tsConfig": "projects/ui-test/tsconfig.spec.json",
+            "karmaConfig": "projects/ui-test/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ui-test/tsconfig.lib.json",
+              "projects/ui-test/tsconfig.spec.json"
+            ],
             "exclude": [
               "**/node_modules/**"
             ]
