@@ -4,6 +4,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
 import { LoginModule } from './login/login.module';
 import { UiModule } from './ui/ui.module';
+import { PageClientsComponent } from './clients/pages/page-clients/page-clients.component';
+import { PagePrestationsComponent } from './prestations/pages/page-prestations/page-prestations.component';
+import { PageLoginComponent } from './login/pages/page-login/page-login.component';
+import { AppRoutingModule } from './app-routing.module';
 
 
 @NgModule({
@@ -14,7 +18,8 @@ import { UiModule } from './ui/ui.module';
     BrowserModule,
     UiModule,
     NgbModule,
-    LoginModule
+    LoginModule,
+    AppRoutingModule
   ],
   bootstrap: [AppComponent]
 })

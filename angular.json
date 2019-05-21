@@ -26,6 +26,11 @@
               "src/styles.scss",
               "./node_modules/bootstrap/dist/css/bootstrap.css"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/stylings/"
+              ]
+            },
             "scripts": [],
             "es5BrowserSupport": true
           },
