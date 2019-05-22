@@ -6,7 +6,8 @@
       </tr>
     </thead>
     <tbody>
-      <app-item-prestation *ngFor="let obj of collection" [item]="obj"></app-item-prestation>
+      <app-item-prestation *ngFor="let obj of collection" [item]="obj"
+      (doChange)="change($event)"></app-item-prestation>
     </tbody>
   </table>
 </div>

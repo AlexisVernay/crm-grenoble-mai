@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PrestationsService } from '../../services/prestations.service';
 import { Prestation } from 'src/app/shared/models/prestation.model';
+import { State } from 'src/app/shared/enums/state.enum';
 
 @Component({
   selector: 'app-list-prestations',
@@ -26,5 +27,9 @@ export class ListPrestationsComponent implements OnInit {
       'State',
       'Action'
     ];
+  }
+
+  change(param: {item: Prestation, state: State}) {
+    this.prestationsService.update(param.item, param.state);
   }
 }

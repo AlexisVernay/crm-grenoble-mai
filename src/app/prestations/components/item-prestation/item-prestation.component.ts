@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Prestation } from 'src/app/shared/models/prestation.model';
 import { State } from 'src/app/shared/enums/state.enum';
 
@@ -9,6 +9,7 @@ import { State } from 'src/app/shared/enums/state.enum';
 })
 export class ItemPrestationComponent implements OnInit {
   @Input() item: Prestation;
+  @Output() doChange: EventEmitter<any> = new EventEmitter();
   states = State;
   // states = Object.values(State);
   constructor() {
@@ -19,7 +20,11 @@ export class ItemPrestationComponent implements OnInit {
 
   changeState(event) {
     console.log(event.target.value);
-
+    this.doChange.emit(
+      {
+        item: this.item,
+        state: event.target.value
+      }
+    );
   }
-
 }
