@@ -4,6 +4,7 @@ import { State } from '../enums/state.enum';
 export class Prestation implements PrestationI {
   id: string;
   client: string;
+  typePresta: string;
   nbJours = 1;
   tjmHt = 7777;
   tauxTva = 20;
