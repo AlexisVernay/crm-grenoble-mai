@@ -32,4 +32,13 @@ export class ListPrestationsComponent implements OnInit {
   change(param: {item: Prestation, state: State}) {
     this.prestationsService.update(param.item, param.state);
   }
+
+  action(param: {item: Prestation, action: string}) {
+    if (param.action === 'delete') {
+      this.prestationsService.delete(param.item);
+    }
+    if (param.action === 'edit') {
+      console.log('redirection vers route edit prestation');
+    }
+  }
 }

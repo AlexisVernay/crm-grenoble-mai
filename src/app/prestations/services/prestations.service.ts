@@ -33,5 +33,9 @@ export class PrestationsService {
 
   // delete item in collectim
 
+  delete(item: Prestation) {
+    console.log(item);
+
+  }
   // get item by id
 }
