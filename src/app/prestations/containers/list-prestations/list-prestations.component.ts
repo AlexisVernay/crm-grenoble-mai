@@ -10,7 +10,7 @@ import { State } from 'src/app/shared/enums/state.enum';
 })
 export class ListPrestationsComponent implements OnInit {
   collection: Prestation[];
-  arrayCollection: Array<string>;
+  headers: Array<string>;
 
   constructor(
     private prestationsService: PrestationsService
@@ -18,7 +18,7 @@ export class ListPrestationsComponent implements OnInit {
 
   ngOnInit() {
     this.collection = this.prestationsService.collection;
-    this.arrayCollection = [
+    this.headers = [
       'Type',
       'Client',
       'Durée',

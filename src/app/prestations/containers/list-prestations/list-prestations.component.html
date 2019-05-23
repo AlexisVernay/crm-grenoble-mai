@@ -1,13 +1,4 @@
-<div class="table-responsive">
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col" *ngFor="let item of arrayCollection">{{ item }}</th>
-      </tr>
-    </thead>
-    <tbody>
-      <app-item-prestation *ngFor="let obj of collection" [item]="obj"
-      (doChange)="change($event)"></app-item-prestation>
-    </tbody>
-  </table>
-</div>
+<app-tableau [headers]="headers">
+    <app-item-prestation *ngFor="let obj of collection" [item]="obj"
+    (doChange)="change($event)"></app-item-prestation>
+</app-tableau>

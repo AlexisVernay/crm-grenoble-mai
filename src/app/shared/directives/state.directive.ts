@@ -1,11 +1,12 @@
 import { Directive, Input, HostBinding, OnChanges } from '@angular/core';
 import { State } from '../enums/state.enum';
+import { StateClient } from '../enums/state-client.enum';
 
 @Directive({
   selector: '[appState]'
 })
 export class StateDirective implements OnChanges {
-  @Input() appState: State;
+  @Input() appState: any;
   @HostBinding('class') nomClass: string;
   constructor() {
     console.log('directive called');
@@ -16,7 +17,7 @@ export class StateDirective implements OnChanges {
     this.nomClass = this.formatClass(this.appState);
   }
 
-  private formatClass(state: State): string {
+  private formatClass(state: any): string {
     return `state-${state.normalize('NFD').replace(/[\u0300-\u036f\s]/g, '').toLocaleLowerCase()}`;
   }
 }
