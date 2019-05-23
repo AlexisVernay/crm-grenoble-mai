@@ -21,6 +21,9 @@ export class PrestationsService {
     this.pCollection = col;
   }
   // add item in collection
+  add(item: Prestation) {
+    this.collection.push(new Prestation(item));
+  }
 
   // update item in collection
   update(item: Prestation, state?: State) {
@@ -32,10 +35,9 @@ export class PrestationsService {
   }
 
   // delete item in collectim
-
   delete(item: Prestation) {
     console.log(item);
-
   }
+
   // get item by id
 }

@@ -21,7 +21,9 @@ export class ClientsService {
     this.pCollection = col;
   }
   // add item in collection
-
+  add(item: Client) {
+    this.collection.push(new Client(item));
+  }
   // update item in collection
   update(item: Client, state?: StateClient) {
     const data = {...item};
@@ -32,6 +34,9 @@ export class ClientsService {
   }
 
   // delete item in collectim
+  delete(item: Client) {
+    console.log(item);
+  }
 
   // get item by id
 }

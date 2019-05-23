@@ -9,16 +9,18 @@ import { RouterModule } from '@angular/router';
 import { ActionComponent } from './components/action/action.component';
 import { NgbPopoverModule } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [TotalPipe, StateDirective, TableauComponent, ButtonAddComponent, ActionComponent],
-  exports: [TotalPipe, StateDirective, TableauComponent, TemplatesModule, ButtonAddComponent, ActionComponent],
+  exports: [TotalPipe, StateDirective, TableauComponent, TemplatesModule, ButtonAddComponent, ActionComponent, ReactiveFormsModule],
   imports: [
     CommonModule,
     TemplatesModule,
     RouterModule,
     NgbPopoverModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    ReactiveFormsModule
   ]
 })
 export class SharedModule { }

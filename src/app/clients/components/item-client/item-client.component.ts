@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Client } from 'src/app/shared/models/client.model';
 import { StateClient } from 'src/app/shared/enums/state-client.enum';
+import { faEdit, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-item-client',
@@ -10,7 +11,10 @@ import { StateClient } from 'src/app/shared/enums/state-client.enum';
 export class ItemClientComponent implements OnInit {
   @Input() item: Client;
   @Output() doChange: EventEmitter<any> = new EventEmitter();
+  @Output() doAction: EventEmitter<any> = new EventEmitter();
   states = StateClient;
+  faEdit = faEdit;
+  faTrashAlt = faTrashAlt;
   // states = Object.values(State);
   constructor() {
   }
@@ -26,5 +30,12 @@ export class ItemClientComponent implements OnInit {
         state: event.target.value
       }
     );
+  }
+
+  action(param: string) {
+    this.doAction.emit({
+      item: this.item,
+      action: param
+    });
   }
 }
