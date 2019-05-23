@@ -10,12 +10,22 @@ import { AddPrestationComponent } from './containers/add-prestation/add-prestati
 import { FormPrestationComponent } from './components/form-prestation/form-prestation.component';
 
 @NgModule({
-  declarations: [PagePrestationsComponent, ListPrestationsComponent, ItemPrestationComponent, PageAddPrestationComponent, AddPrestationComponent, FormPrestationComponent],
-  imports: [
-    CommonModule,
-    PrestationsRoutingModule,
-    SharedModule
-  ]
+  declarations: [
+    PagePrestationsComponent,
+    ListPrestationsComponent,
+    ItemPrestationComponent,
+    PageAddPrestationComponent,
+    AddPrestationComponent,
+    FormPrestationComponent
+  ],
+  exports: [
+    PagePrestationsComponent,
+    ListPrestationsComponent,
+    ItemPrestationComponent,
+    PageAddPrestationComponent,
+    AddPrestationComponent,
+    FormPrestationComponent
+  ],
+  imports: [CommonModule, PrestationsRoutingModule, SharedModule]
 })
-
-export class PrestationsModule { }
+export class PrestationsModule {}
