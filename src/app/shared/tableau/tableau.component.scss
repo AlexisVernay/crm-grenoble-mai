@@ -2,7 +2,7 @@
 
 #tab {
   .state-annule {
-    background: lighten($color1, 10);
+    background: $color3;
   }
   .state-options {
     background: $color1;
@@ -14,7 +14,7 @@
     background: $color1;
   }
   .state-inactif {
-    background: $color2;
+    background: $color3;
   }
   tbody > * {
     display: contents;

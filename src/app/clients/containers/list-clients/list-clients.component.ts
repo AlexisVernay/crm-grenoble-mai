@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { StateClient } from 'src/app/shared/enums/state-client.enum';
 import { Client } from 'src/app/shared/models/client.model';
 import { ClientsService } from '../../services/clients.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-list-clients',
@@ -9,7 +10,8 @@ import { ClientsService } from '../../services/clients.service';
   styleUrls: ['./list-clients.component.scss']
 })
 export class ListClientsComponent implements OnInit {
-  collection: Client[];
+  // collection: Client[];
+  collection$: Observable<Client[]>;
   headers: Array<string>;
 
   constructor(
@@ -17,7 +19,12 @@ export class ListClientsComponent implements OnInit {
     ) { }
 
   ngOnInit() {
-    this.collection = this.clientsService.collection;
+    this.collection$ = this.clientsService.collection;
+    /*this.sub = this.clientsService.collection.subscribe(
+      (data) => {
+        this.collection = data;
+      }
+    );*/
     this.headers = [
       'Id',
       'Nom',
