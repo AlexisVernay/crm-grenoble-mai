@@ -18,6 +18,12 @@
   }
   tbody > * {
     display: contents;
+    &:hover {
+      cursor: pointer;
+      tr {
+        background: darken($light-color, 20);
+      }
+    }
   }
   .list-group-item:hover {
     cursor: pointer;

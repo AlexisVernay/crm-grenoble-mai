@@ -5,15 +5,33 @@ import { StateDirective } from './directives/state.directive';
 import { TableauComponent } from './tableau/tableau.component';
 import { TemplatesModule } from '../templates/templates.module';
 import { ButtonAddComponent } from './components/button-add/button-add.component';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Router } from '@angular/router';
 import { ActionComponent } from './components/action/action.component';
 import { NgbPopoverModule } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LinksComponent } from './links/links.component';
 
 @NgModule({
-  declarations: [TotalPipe, StateDirective, TableauComponent, ButtonAddComponent, ActionComponent],
-  exports: [TotalPipe, StateDirective, TableauComponent, TemplatesModule, ButtonAddComponent, ActionComponent, ReactiveFormsModule],
+  declarations: [
+    TotalPipe,
+    StateDirective,
+    TableauComponent,
+    ButtonAddComponent,
+    ActionComponent,
+    LinksComponent
+  ],
+  exports: [
+    TotalPipe,
+    StateDirective,
+    TableauComponent,
+    TemplatesModule,
+    ButtonAddComponent,
+    ActionComponent,
+    ReactiveFormsModule,
+    LinksComponent,
+    RouterModule
+  ],
   imports: [
     CommonModule,
     TemplatesModule,
@@ -23,4 +41,4 @@ import { ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule
   ]
 })
-export class SharedModule { }
+export class SharedModule {}

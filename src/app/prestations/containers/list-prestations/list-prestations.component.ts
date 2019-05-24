@@ -38,7 +38,11 @@ export class ListPrestationsComponent implements OnInit, OnDestroy {
   }
 
   change(param: {item: Prestation, state: State}) {
-    this.prestationsService.update(param.item, param.state);
+    this.prestationsService.update(param.item, param.state).then((res) => {
+      // res etant la reponse de l'api
+      console.log('Le changement c\'est maintenant');
+
+    });
   }
 
   action(param: {item: Prestation, action: string}) {
@@ -48,6 +52,11 @@ export class ListPrestationsComponent implements OnInit, OnDestroy {
     if (param.action === 'edit') {
       console.log('redirection vers route edit prestation');
     }
+  }
+
+  displayDetail(obj) {
+    console.log(obj);
+    this.prestationsService.presta$.next(obj);
   }
 
   ngOnDestroy() {

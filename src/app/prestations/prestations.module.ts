@@ -8,6 +8,8 @@ import { SharedModule } from '../shared/shared.module';
 import { PageAddPrestationComponent } from './pages/page-add-prestation/page-add-prestation.component';
 import { AddPrestationComponent } from './containers/add-prestation/add-prestation.component';
 import { FormPrestationComponent } from './components/form-prestation/form-prestation.component';
+import { DetailPrestationComponent } from './components/detail-prestation/detail-prestation.component';
+import { CommentPrestationComponent } from './components/comment-prestation/comment-prestation.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { FormPrestationComponent } from './components/form-prestation/form-prest
     ItemPrestationComponent,
     PageAddPrestationComponent,
     AddPrestationComponent,
-    FormPrestationComponent
+    FormPrestationComponent,
+    DetailPrestationComponent,
+    CommentPrestationComponent
   ],
   exports: [
     PagePrestationsComponent,

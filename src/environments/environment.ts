@@ -12,7 +12,8 @@ export const environment = {
     storageBucket: 'prestaapp-7aca5.appspot.com',
     messagingSenderId: '569987834656',
     appId: '1:569987834656:web:8085755526203f9f'
-  }
+  },
+  urlApi: 'https://www.monserveurdedev.com/'
 };
 
 /*
